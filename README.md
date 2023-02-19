@@ -38,6 +38,25 @@ SODA_AUTH_HEADER = "Basic yourauthdetailsbase64encoded==";
 ```
 4. Run `mvn clean install` -or- run `Main.main()` in your IDE to test
 
+Note, base64 encoding is not encryption. It works suitably well with HTTP `Basic auth`
+but you should not rely on base64 encoded credentials to be secure. If you are new to
+base64 here are some tips for generating a suitable string to place in `Main.java`.
+
+### On macOS: (using bash)
+```
+$ printf 'yourschema:yourpassword' | base64
+```
+
+### On Windows: (using powershell)
+```
+> [convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("yourschema:yourpassword"))
+```
+
+If these don't work for you, or if you can't find the tools on your operating
+system, or need more ideas a search engine should be your next stop. (Search
+`how to encode base64 strings on xyz os` or similar)
+
+
 ## Testing
 
 If all goes well hopefully you will see something similar to this:
