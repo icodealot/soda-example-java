@@ -1,10 +1,22 @@
-# Cache JSON Responses Using SODA
+# Example using NOAA with SODA for REST
 
-This is an example of using the SODA endpoint included with ORDS to cache 
-JSON responses in the database. For example, this could be used with NOAA
-(`api.weather.gov`) `points` responses that are used repeatedly, but for 
-which values do not change from one request to the next. You could build
-a weather application and store your data in JSON collections.
+This is an example of using the Simple Oracle Document Access (SODA) with
+Oracle REST Data Services (ORDS) to cache JSON responses in the database.
+
+In the example SODA is used to cache JSON responses from weather.gov. Data
+from (`api.weather.gov`) `points` responses are used repeatedly, but this
+data does not change from one request to the next. With SODA you could build
+a full weather application or simply incorporate transient JSON payloads
+into your application.
+
+Note, in Database Actions you can find SODA in `JSON`. When you create a
+new collection under JSON, you are already using SODA!
+
+You can learn more here:
+
+- SODA: https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/ords-overview-using-soda-rest.html
+- ORDS: https://oracle.com/rest
+- NOAA: https://www.weather.gov/documentation/services-web-api
 
 ## Setup
 
